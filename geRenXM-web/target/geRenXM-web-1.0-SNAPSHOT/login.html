@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+	body {
+		background:url("images/loginBackground.jpg");
+		//opacity:0.7;
+	}
+	.container {
+		width:500px;
+		height:200px;
+		background-color:rgba(255,255,255,0.7);
+		position:relative;
+		top:200px;
+		left:750px;
+		padding-bottom:20px;
+		border-radius:5px;		
+	}
+	.form-signin-heading {
+		text-align:center;
+	}
+	.ipts{
+		height:30px;
+		outline:none;
+		font-weight:normal;
+	}
+	.tips{
+		border: 1px solid yellow;
+		font-size:12px;
+		display:none;
+	}
+	.btn{
+		width:200px;
+		height:40px;
+		margin-left:20px;
+		background:pink;
+		font-size:22px;
+		color:#FFF;
+	}
+	.btn:hover{
+		cursor:pointer;
+		background:red;
+	}
+</style>
+
+</head>
+<body>
+	<script type="text/javascript"> 
+		//onload事件只支持一个
+    window.onload= function(){
+			//选择要操作的文本框
+			var ipts = document.getElementsByClassName("ipts");
+			//选择所有的提示框
+			var tips = document.getElementsByClassName("tips");
+			
+			//第一个获得焦点
+			ipts[0].onfocus=function(){
+				if(this.value==""){
+					this.placeholder="";
+					tips[0].innerHTML="支持字母 中文和数字(4-20)";
+					tips[0].style.display="inline-block";
+				}	
+			}
+			
+			//第一个失去焦点
+			ipts[0].onblur=function(){
+				if(this.value==""){
+					ipts[0].placeholder="username";
+					tips[0].innerHTML="";
+				}	
+				
+				//验证用户判断
+				var userMsg = checkUser(ipts[0].value);
+				//alert(userMsg);
+				if(userMsg==""){
+					//显示绿色小勾
+					//alert("ddd");
+					tips[0].style.color="green";
+					//tips[0].style.borderColor="green";
+					tips[0].innerHTML="<img src='images/sucess.png'/>";
+				}else {
+					tips[0].style.color="red";
+					//tips[0].style.borderColor="red";
+					tips[0].innerHTML =userMsg ;
+					}
+			}
+			
+			
+			//第二个获得焦点
+			ipts[1].onfocus=function(){
+				if(this.value==""){
+					this.placeholder="";
+					tips[1].innerHTML="建议使用数字 字母和符号(6-20)";
+					tips[1].style.display="inline-block";
+				}	
+			}
+			
+			
+			//第二个失去焦点
+			ipts[1].onblur=function(){
+				if(this.value==""){
+					ipts[1].placeholder="password";
+					tips[1].innerHTML="";
+				}
+				
+				//验证密码判断
+				var passMsg = checkPass(ipts[1].value);
+				if(passMsg==""){
+					tips[1].style.color="";
+					//tips[1].style.borderColor="";
+					tips[1].innerHTML="<img src='images/sucess.png'>";
+				}else {
+					tips[1].style.color="red";
+					tips[1].innerHTML = passMsg;
+				}
+				
+				
+			}
+		
+}
+		
+		
+//验证用户名 --正则表达式
+ function checkUser(name){
+	var msg ="";
+	var reg = /^[\u4e00-\u9fa5-\w]{4,20}$/ ;
+	var flag =reg.test(name) ;
+	
+	if(name.length==0){
+		msg ="请输入用户名";
+	}else if(name.length<4 || name.length>20){
+		msg="长度必须是4-20之间";
+	}else if(flag==false){
+		msg="格式有误，只支持汉字，字母和数字";
+	}
+	return msg;
+}
+
+
+//验证密码 
+function checkPass(pass){
+	var msg = "";
+	
+	//正则表达式
+	var reg = /^[\x21-\x7ea-zA-Z0-9]{6,20}$/ ;
+	var flag = reg.test(pass);
+	
+	if(pass.length==0){
+		msg = "请输入mima";
+	}else if(pass.length<6 || pass.length>20){
+		msg = "长度只能在6-20个z支符之间";
+	}else if(flag = false){
+		msg = "格式有误，建议使用字母和数字或者符号两种以上的组合";
+	}
+	return msg;
+}
+		
+	
+	</script>
+
+	
+	<div class="container">
+
+      <form class="form-signin" action="login.do" method="post">
+        <h2 class="form-signin-heading">健身管理系统</h2>
+        <br/>
+        <label class="sr-only" >用户名</label>
+        <input type="text" class="form-control ipts" name="user" placeholder="Username">
+        <span class="tips">支持字母 中文和数字(4-20)</span>
+        <br/>
+        
+        <label  class="sr-only" >密　码</label>
+        <input name="pass" type="password" class="form-control ipts" placeholder="Password" >
+        <span class="tips">建议使用数字 字母和符号(6-20)</span>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me">请同意
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" >登录</button>
+      </form>
+
+    </div>
+	
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+	
+</body>
+</html>

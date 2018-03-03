@@ -1,0 +1,79 @@
+body{
+    font-family: "微软雅黑", "Microsoft Yahei", Arial, Helvetica, sans-serif, "宋体";
+}
+#loginWrap{
+    height:550px;
+    width: 350px;
+    background-color:#FFFFFF  ;
+    position: absolute;
+    top:80px;
+    left:500px;
+    border-radius: 2px;
+}
+#loginWrap img{
+    margin-left: 90px;
+}
+#loginWrap-content{
+    position: relative;
+    top:80px;
+    left: 50px;
+    width: 250px;
+    height: 150px;
+}
+#loginWrap-form input{
+    margin-bottom:20px ;
+    padding: 0 20px;
+    line-height: 48px;
+    width: 250px;
+    height:48px;
+    font-size:16px;
+    border-radius: 2px;
+    background-color: #f4f4f4;
+    color:#b6b6b6;
+    border: 1px;
+}
+#bgimg img{
+    float: left;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}
+.login-btn{
+    display: block;
+    margin:40px auto 0;
+    line-height: 48px;
+    width: 250px;
+    height:48px;
+    font-size:16px;
+    border-radius: 2px;
+    background: #ed6d00;
+    color: #ffffff;
+    text-align: center;
+    border: 1px;
+}
+/***********************************************************************/
+.code
+{
+    background-color: #2aabd2;
+    /*background-image:url(code.jpg);*/
+    font-family:Arial;
+    font-style:italic;
+    color:Red;
+    border:0;
+    padding:2px 3px;
+    letter-spacing:3px;
+    font-weight:bolder;
+}
+.unchanged
+{
+    border:0;
+    color:red;
+}
+
+

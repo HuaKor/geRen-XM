@@ -1,0 +1,57 @@
+﻿<!DOCTYPE DTD>
+<html>
+	<head>
+		<meta charset="utf-8"/>	
+		<title>
+			健身管理系统
+		</title>
+		
+	</head>
+
+	<frameset rows="90,*" frameborder="1" >
+		<!-- 顶部导航 -->
+		<frame src="coping.html" noresize="noresize" frameborder="1"/>
+		
+		<frameset cols="20%,80%">
+		<frame src="left.html"/>
+		<frameset  rows="30,*" frameborder="0">
+			<frame src="lujingdaohang.html">
+			<frame src="primary.html" name="main"/>
+		</frameset>
+
+	</frameset>
+	</frameset>
+	
+	<!--
+		frameset:区分区域
+		frame:指定页面到某区域中
+		
+		注：划分区域时，遵循“先从上到下，后从左到右”的原则
+	
+	-->
+	
+	
+<!--
+	
+提示和注释：
+	注释：如果您希望验证包含框架的页面，请确保 doctype 被设置为 "Frameset DTD"。阅读更多有关 DOCTYPE 的内容。
+	重要事项：您不能与 <frameset></frameset> 标签一起使用 <body></body> 标签。
+		不过，如果您需要为不支持框架的浏览器添加一个 <noframes> 标签，请务必将此标签放置在 <body></body> 标签中！
+	
+可选的属性:
+	属性			值				描述
+	frameborder		0|1				规定是否显示框架周围的边框。
+	longdesc		URL				规定一个包含有关框架内容的长描述的页面。
+	marginheight	pixels			定义框架的上方和下方的边距。
+	marginwidth		pixels			定义框架的左侧和右侧的边距。
+	name			name			规定框架的名称。
+	noresize		noresize		规定无法调整框架的大小。
+	scrolling		yes|no|auto		规定是否在框架中显示滚动条。
+	src				URL				规定在框架中显示的文档的 URL。
+	
+-->
+	
+</html>
+
+
+

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>Student management system</title>
+	
+	
+	<link href="css/left.css" rel="stylesheet"/> 
+	 <link href="css/bootstrap.min.css" rel="stylesheet">
+<style>
+	#yi{
+		background：yellow;	
+	}
+/*侧导航条*/
+#accordion {
+	width:230px;
+	margin:10px;
+}
+
+/* 侧边导航的标题 */
+.panel-default>.panel-heading {
+	background-color:#d9edf7;
+}
+
+.list-group {
+	margin:0;
+	line-height:8px;
+}
+
+.panel-heading{
+	padding:0;
+}
+.panel-heading a{
+	text-align:left;
+}
+.panel{
+	color:red;
+}
+
+</style>	 
+	 
+</head>
+<body>
+<!-- 侧边导航 -->
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	<div id="yi" class="panel panel-default">
+		<div  class="panel-heading" role="tab" id="headingOne">
+			<a  class="btn btn-block panel-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				健身管理
+			</a>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+			<div class="list-group">
+				<a href="getAll.action" target="main" class="list-group-item">人员列表</a>
+				<a href="teacherAction.action" target="main" class="list-group-item">会员列表</a>
+				<a href="table.jsp" target="main" class="list-group-item">已注册的会员</a>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingSix">
+			<a class="btn btn-block panel-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+				用户活动
+			</a>
+		</div>
+		<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+			<div class="list-group">
+			  <a href="#" target="main" class="list-group-item">游戏</a>
+			  <a href="shangchuang.jsp" target="main" class="list-group-item">文件上传</a>
+			  <a href="#" target="main" class="list-group-item">下载</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingEight">
+			<a class="btn btn-block panel-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+				设置
+			</a>		
+		</div>
+		<div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+			<div class="list-group">
+				<a href="zhuSiao.action" target="main" class="list-group-item">注销</a>
+				<a href="RenYuanUpdate.jsp" target="main" class="list-group-item">修改用户</a>
+			  <a href="#" target="main" class="list-group-item">入会注册</a>
+			</div>
+		</div>
+	</div>
+</div>
+	
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

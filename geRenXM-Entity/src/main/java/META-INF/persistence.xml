@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="jpa">
+        <class>entity.RenYuanEntity</class>
+        <class>entity.TeacherEntity</class>
+        <class>entity.HuiyuanEntity</class>
+        <class>entity.ShopCartEntity</class>
+        <properties>
+            <!-- 数据库连接属性 -->
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/geRenXM?useUnicode=true&amp;characterEncoding=utf-8"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="123456"/>
+            <!-- 设置数据库方言 -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL55Dialect"/>
+            <!-- 显示sql语句-->
+            <property name="hibernate.show_sql" value="true"/>
+            <!-- 格式化sql语句-->
+            <property name="hibernate.format_sql" value="true"/>
+            <!-- 自动建表 -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <!-- C3P0连接池 -->
+            <property name="hibernate.connection.provider_class" value="org.hibernate.c3p0.internal.C3P0ConnectionProvider"/>
+            <!-- 最大连接数 -->
+            <property name="hibernate.c3p0.max_size" value="20"/>
+            <!-- 最小连接数 -->
+            <property name="hibernate.c3p0.min_size" value="5"/>
+            <!-- 连接空闲超时时间 -->
+            <property name="hibernate.c3p0.timeout" value="120"/>
+            <!-- 最大的PreparedStatement的数量 -->
+            <property name="hibernate.c3p0.max_statements" value="100"/>
+        </properties>
+    </persistence-unit>
+</persistence>

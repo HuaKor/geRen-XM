@@ -1,0 +1,12 @@
+action\LoginValidateAction.class
+action\InsertAction.class
+servlet\SimpleFileupload.class
+action\DeleteAction.class
+action\QueryAction.class
+action\zhuShaoAction.class
+servlet\LoginServlet.class
+servlet\RenYuanServlet.class
+action\CreateImageAction.class
+action\updateAction.class
+controller\TeacherAction.class
+servlet\ShangchuangServlet.class
